@@ -10,5 +10,5 @@ before_install:
 script:
   - sudo apt-get update -y &&  sudo apt-get upgrade -y
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t martindlut/ofed:latest ubuntu/
+  - travis_wait 30 docker build -t martindlut/ofed:latest ubuntu/
   - docker push martindlut/ofed:latest
