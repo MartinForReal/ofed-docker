@@ -3,7 +3,7 @@ ARG D_BASE_IMAGE=ubuntu:20.04
 FROM $D_BASE_IMAGE AS build
 
 # Build Args - pass with --build-arg flag during build
-ARG D_OFED_VERSION="5.0-2.1.8.0"
+ARG D_OFED_VERSION="5.1-2.5.8.0"
 ARG D_OS="ubuntu20.04"
 ARG D_ARCH="x86_64"
 ARG D_OFED_PATH="MLNX_OFED_LINUX-${D_OFED_VERSION}-${D_OS}-${D_ARCH}"
