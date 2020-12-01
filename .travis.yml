@@ -11,4 +11,6 @@ script:
   - sudo apt-get update -y &&  sudo apt-get upgrade -y
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - travis_wait 30 docker build -t martindlut/ofed:latest ubuntu/
+  - travis_wait 30 docker build -t martindlut/nv-peer-mem:latest --build-arg D_NV_PEER_MEM_BRANCH=master gpu-direct/ubuntu/
   - docker push martindlut/ofed:latest
+  - docker push martindlut/nv-peer-mem:latest
