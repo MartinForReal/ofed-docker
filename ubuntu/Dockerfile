@@ -28,7 +28,7 @@ RUN tar -xf ${D_OFED_TARBALL_NAME}
 RUN apt-get -yq update; apt-get -yq install perl ifupdown
 
 # Install OFED
-RUN /bin/bash -c '/root/MLNX_OFED_LINUX-${D_OFED_VERSION}-${D_OS}-${D_ARCH}/mlnxofedinstall --without-fw-update --kernel-only --force ${D_WITHOUT_FLAGS}'
+RUN /bin/bash -c '/root/MLNX_OFED_LINUX-${D_OFED_VERSION}-${D_OS}-${D_ARCH}/mlnxofedinstall --without-fw-update --kernel-only --force ${D_WITHOUT_FLAGS}';cat /tmp/MLNX_OFED_LINUX.7.logs/general.log
 
 # Post Install steps
 
