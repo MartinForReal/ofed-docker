@@ -67,6 +67,7 @@ function start_driver() {
         return 1
     fi
     ofed_info -s
+    /etc/init.d/knem start
 }
 
 # Unset driver readiness in case it was set in a previous run of this container
