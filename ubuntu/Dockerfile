@@ -22,7 +22,7 @@ RUN  apt-get update && apt-get install -y --no-install-recommends \
     echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse" >> /etc/apt/sources.list && \
     echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse" >> /etc/apt/sources.list && \
     echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse" >> /etc/apt/sources.list && \
-    apt-get -yq update && apt-get -yq install perl ifupdown \
+    apt-get -yq update && apt-get -yq install perl ifupdown &&\
     curl -o ${D_OFED_TARBALL_NAME} -L ${D_OFED_URL_PATH}  && tar -xf ${D_OFED_TARBALL_NAME} && \
     /bin/bash -c '/root/MLNX_OFED_LINUX-${D_OFED_VERSION}-${D_OS}-${D_ARCH}/mlnxofedinstall --without-fw-update --force ${D_WITHOUT_FLAGS}' && \
     sed -i '/ESP_OFFLOAD_LOAD=yes/c\ESP_OFFLOAD_LOAD=no' /etc/infiniband/openib.conf && \
